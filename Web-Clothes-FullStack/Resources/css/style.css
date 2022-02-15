@@ -158,8 +158,46 @@ header{
     text-align: center;
     outline: none;
 }
-/*ABOUT SECTION*/
+/*FOOTER*/
+footer{
+    text-align: center;
+}
 
-/*PRODUCT SECTION*/
+.footer-top{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 70px;
+}
 
-/*TESTIMONIAL AREA*/
+.footer-top li{
+    list-style: none;
+    padding: 0 12px;
+    position: relative;
+}
+
+.footer-top img{
+    height: 50px;
+}
+
+.footer-top li::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #cccccc;
+    position: absolute;
+    right: 0;
+    transform: translateY(-100%);
+}
+
+.footer-top li:last-child::after{
+    display: none;
+}
+
+.footer-top li:last-child a{
+    margin-right: 12px;
+    color: #333;
+}
