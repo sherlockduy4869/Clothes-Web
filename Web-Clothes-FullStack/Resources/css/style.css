@@ -11,6 +11,10 @@ a{
     text-decoration: none;
     color: #000;
 }
+/*STICKY AREA*/
+header.sticky{
+    background-color: rgba(255, 255, 255, 1);;
+}
 /*HEADER AREA*/
 header{
     display: flex;
@@ -18,6 +22,16 @@ header{
     padding: 12px 50px;
     height: 70px;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+header:hover{
+    background-color: rgba(255, 255, 255, 1);;
 }
 
 .logo{
@@ -36,12 +50,6 @@ header{
     
 }
 
-.menu li:hover .sub-menu{
-    visibility: visible;
-    top: 30px;
-    transition: 0.3s;
-}
-
 .menu li{
     list-style: none;
     padding: 0 12px;
@@ -58,6 +66,22 @@ header{
 .others li{
     list-style: none;
     padding: 0 12px;
+    position: relative;
+}
+
+.others li::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #cccccc;
+    position: absolute;
+    right: 0;
+    transform: translateY(-100%);
+}
+
+.others li:last-child::after{
+    display: none;
 }
 
 .others li:first-child{
@@ -68,11 +92,18 @@ header{
     width: 100%;
     border: none;
     border-bottom: 1px solid #333;
+    background-color: transparent;
+    outline-style: none;
 }
 
 .others li:first-child i{
     position: absolute;
     right: 10px;
+}
+
+.menu li:hover .sub-menu{
+    visibility: visible;
+    top: 45px;
 }
 
 .sub-menu{
@@ -81,7 +112,10 @@ header{
     border: 1px solid #ccc;
     padding: 10px 0 10px 20px;
     visibility: hidden;
-    top: 50px;
+    top: 60px;
+    background-color: #fff;
+    transition: 0.3s;
+    z-index: 1;
 }
 
 /*SLIDER AREA*/
@@ -116,6 +150,7 @@ header{
       background-color: #ccc;
       border-radius: 50%;
       margin-right: 12px;
+      margin-top: 7px;
       cursor: pointer;
   }
 
@@ -139,6 +174,7 @@ header{
 
 .app-google img{
     height: 50px;
+    cursor: pointer;
 }
 
 .app-container p{
@@ -176,6 +212,7 @@ footer{
     list-style: none;
     padding: 0 12px;
     position: relative;
+
 }
 
 .footer-top img{
@@ -200,4 +237,18 @@ footer{
 .footer-top li:last-child a{
     margin-right: 12px;
     color: #333;
+}
+
+.footer-bottom{
+    margin-top: 15px;
+}
+
+footer p{
+    font-size: 70%;
+}
+
+footer .footer-bottom{
+    background-color: #ccc;
+    padding: 10px 0;
+    font-size: 70%;
 }
