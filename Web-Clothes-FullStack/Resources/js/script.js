@@ -63,7 +63,7 @@ $(document).ready(
                 bigImg.src = imgItem.src
             })
         })
-
+        
         const baoquan = document.querySelector(".baoquan")
         const chitiet = document.querySelector(".chitiet")
 
