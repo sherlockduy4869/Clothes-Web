@@ -55,20 +55,22 @@
 <!--CART AREA-->
 <section class="cart">
     <div class="container">
-        <div class="cart-top">
-            <div class="cart-top-cart">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="cart-top-cart">
-                <i class="fas fa-map-marker"></i>
-            </div>
-            <div class="cart-top-cart">
-                <i class="fas fa-money-check-alt"></i>
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <i class="fas fa-shopping-cart "></i>
+                </div>
+                <div class="cart-top-adress cart-top-item">
+                    <i class="fas fa-map-marker "></i>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <i class="fas fa-money-check-alt "></i>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="cart-content">
+        <div class="cart-content row">
             <div class="cart-content-left">
                 <table>
                     <tr>
@@ -81,12 +83,21 @@
                         <th>Xóa</th>
                     </tr>
                     <tr>
+                        <td> <img src="./Resources/img/pic1.3.jfif" alt=""> </td>
+                        <td> <p> Quần sooc Duy-kun</p></td>
+                        <td> <img src="./Resources/img/color.png" alt=""> </td>
+                        <td> <p>L</p> </td>
+                        <td> <input type="number" value="1" min="1"> </td>
+                        <td> <p>490.000 <sup>đ</sup></p> </td>
+                        <td> <span>X</span> </td>
+                    </tr>
+                    <tr>
                         <td> <img src="./Resources/img/pic1.2.jfif" alt=""> </td>
                         <td> <p> Quần sooc Duy-kun</p></td>
                         <td> <img src="./Resources/img/color.png" alt=""> </td>
                         <td> <p>L</p> </td>
                         <td> <input type="number" value="1" min="1"> </td>
-                        <td> <p>490.000 <sub>đ</sub></p> </td>
+                        <td> <p>490.000 <sup>đ</sup></p> </td>
                         <td> <span>X</span> </td>
                     </tr>
                 </table>
@@ -120,7 +131,7 @@
                     <button>Thanh toán</button>
                 </div>
                 <div class="cart-content-right-dangnhap">
-                    <p>TÀI KHOẢN IVY</p>
+                    <p>TÀI KHOẢN IVY</p> <br>
                     <p>Hãy <a href="">Đăng nhập</a> tài khoản để tích điểm thành viên</p>
                 </div>
             </div>
