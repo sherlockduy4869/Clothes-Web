@@ -1,6 +1,6 @@
 <?php
- define('__ROOT__', dirname(dirname(__FILE__))); 
- include (__ROOT__.'/config/config.php');
+  include "config.php";
+    
 ?>
  
 <?php
@@ -9,6 +9,7 @@ Class Database{
    public $user   = DB_USER;
    public $pass   = DB_PASS;
    public $dbname = DB_NAME;
+
    public $link;
    public $error;
  
