@@ -1044,3 +1044,6 @@ footer .footer-bottom{
     background-color: black;
     color: #fff;
 }
+.payment-content-left-method-payment-item-img img{
+    width: 50px;
+}
