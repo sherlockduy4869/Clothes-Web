@@ -38,26 +38,26 @@ class brand{
         return $result;
     }
 
-    public function get_category($category_id)
+    public function get_brand($brand_id)
     {
-        $query = "SELECT * FROM tbl_category WHERE category_id = '$category_id'";
+        $query = "SELECT * FROM tbl_brand WHERE brand_id = '$brand_id'";
         $result = $this ->db->select($query);
         return $result;
     }
 
-    public function update_category($category_name, $category_id)
+    public function update_brand($category_id, $brand_name,$brand_id)
     {
-        $query = "UPDATE tbl_category SET category_name = '$category_name' WHERE category_id = '$category_id'";
+        $query = "UPDATE tbl_brand SET brand_name = '$brand_name' , category_id = '$category_id'  WHERE brand_id = '$brand_id'";
         $result = $this ->db->update($query);
-        header('Location:categorylist.php');
+        header('Location:brandlist.php');
         return $result;
     }
 
-    public function delete_category($category_id)
+    public function delete_brand($brand_id)
     {
-        $query = "DELETE FROM tbl_category WHERE category_id = '$category_id'";
+        $query = "DELETE FROM tbl_brand WHERE brand_id = '$brand_id'";
         $result = $this ->db->delete($query);
-        header('Location:categorylist.php');
+        header('Location:brandlist.php');
         return $result;
     }
 }

@@ -15,13 +15,13 @@
 
 <div class="admin-content-right">
             <div class="admin-content-right-category_list">
-                <h1>Danh sách danh mục</h1>
+                <h1>Danh sách loại sản phẩm</h1>
                 <table>
                     <tr>
                         <th>STT</th>
                         <th>ID</th>
-                        <th>Category ID</th>
                         <th>Danh mục</th>
+                        <th>Loại sản phẩm</th>
                         <th>Tùy biến</th>
                     </tr>
                     <?php
