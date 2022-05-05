@@ -90,3 +90,9 @@ header{
 table{
     border-collapse: collapse;
 }
+
+/* BRAND AREA */
+select{
+    height: 30px;
+    width: 200px;
+}
