@@ -2,7 +2,7 @@
 
     include "header.php";
     include "slider.php";
-    include "class/category_class.php";
+    include "Class/category_class.php";
 
 ?>
 

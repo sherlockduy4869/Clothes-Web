@@ -1,3 +1,4 @@
+/* CATEGORY AREA */
 *{
     padding: 0px;
     margin: 0px;
@@ -73,4 +74,19 @@ header{
     background-color: transparent;
     border: 1px solid brown;
     color: brown;
+}
+
+/* CATEGORYLIST AREA */
+.admin-content-right-category_list table{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admin-content-right-category_list table tr th,td{
+    border: 1px solid #dddddd;
+}
+
+table{
+    border-collapse: collapse;
 }
