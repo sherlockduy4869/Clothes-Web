@@ -57,11 +57,23 @@
             </div>
         </div>
     </section>
-    <script> 
+    
+</body>
+<script> 
     CKEDITOR.replace( 'editor', {
 	filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
 	filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
     } );
-    </script>
-</body>
+</script>
+<script>
+    $(document).ready(function(){
+        $('#category_id').change(function(){
+            //alert($(this).val());
+            var x = $(this).val();
+            $.get("productadd_ajax.php",{category_id:x},function(data){
+                $("#brand_id").html(data);
+            })
+        })
+    })
+</script>
 </html>
