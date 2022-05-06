@@ -9,7 +9,6 @@
 <?php
     $product = new product;
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        
         $insert_product = $product -> insert_product($_POST, $_FILES);
     }
 ?>
@@ -63,7 +62,7 @@
                     <label for="">Ảnh sản phâm<span style="color: red;">*</span></label>
                     <input name="product_img" required type="file">
                     <label for="">Ảnh mô tả<span style="color: red;">*</span></label>
-                    <input name="product_img_desc" required type="file" multiple>
+                    <input name="product_img_desc[]" required type="file" multiple>
                     <button type="submit">Thêm</button>
                 </form>
             </div>
