@@ -30,6 +30,13 @@ class product{
         return $result;
     }
 
+    public function show_brand_ajax($category_id)
+    {
+        $query = "SELECT * FROM tbl_brand WHERE category_id = '$category_id'";
+        $result = $this ->db->select($query);
+        return $result;
+    }
+
     public function insert_product()
     {
         $product_name = $_POST['product_name'];
@@ -81,12 +88,7 @@ class product{
 
     
 
-    public function get_brand($brand_id)
-    {
-        $query = "SELECT * FROM tbl_brand WHERE brand_id = '$brand_id'";
-        $result = $this ->db->select($query);
-        return $result;
-    }
+    
 
     public function update_brand($category_id, $brand_name,$brand_id)
     {
