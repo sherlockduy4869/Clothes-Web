@@ -46,28 +46,58 @@ class product{
         $product_price_new = $_POST['product_price_new'];
         $product_desc = $_POST['product_desc'];
         $product_img = $_FILES['product_img']['name'];
-        move_uploaded_file($_FILES['product_img']['tmp_name'],"Uploads/".$_FILES['product_img']['name']);
-
-        $query = "INSERT INTO tbl_product 
-        (product_name, category_id, brand_id, product_price, product_price_new, product_desc, product_img) 
-        VALUES('$product_name','$category_id','$brand_id','$product_price','$product_price_new','$product_desc','$product_img')";
-        $result = $this ->db->insert($query);
-
-        if($result){
-            $query = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 1";
-            $result = $this -> db -> select($query)-> fetch_assoc();
-            $product_id = $result['product_id'];
-            $filename = $_FILES['product_img_desc']['name'];
-            $filetmp = $_FILES['product_img_desc']['tmp_name'];
-
-            foreach ($filename as $key => $value)
+        $filetarget = basename($_FILES['product_img']['name']);
+        $filetype = strtolower(pathinfo($product_img, PATHINFO_EXTENSION));
+        $filesize = $_FILES['product_img']['size'];
+        if(file_exists("Uploads/$filetarget"))
+        {
+            $alert = "File existed";
+            return $alert;
+        }
+        else
+        {
+            if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg")
             {
-                move_uploaded_file($filetmp[$key],"Uploads_desc/".$value);
-                $query = "INSERT INTO tbl_product_img_desc (product_id, product_img_desc) VALUES('$product_id','$value')";
-                $result = $this ->db->insert($query);
+                $alert = "Only accept .jpg, .png, .jpeg";
+                return $alert;
+            }
+            else
+            {   
+                if($filesize>10000000)
+                {
+                    $alert = "Only accept filesize < 1MB";
+                    return $alert;
+                }
+                else 
+                {
+                    move_uploaded_file($_FILES['product_img']['tmp_name'],"Uploads/".$_FILES['product_img']['name']);
+
+                    $query = "INSERT INTO tbl_product 
+                    (product_name, category_id, brand_id, product_price, product_price_new, product_desc, product_img) 
+                    VALUES('$product_name','$category_id','$brand_id','$product_price','$product_price_new','$product_desc','$product_img')";
+                    $result = $this ->db->insert($query);
+            
+                    if($result){
+                        $query = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 1";
+                        $result = $this -> db -> select($query)-> fetch_assoc();
+                        $product_id = $result['product_id'];
+                        $filename = $_FILES['product_img_desc']['name'];
+                        $filetmp = $_FILES['product_img_desc']['tmp_name'];
+            
+                        foreach ($filename as $key => $value)
+                        {
+                            move_uploaded_file($filetmp[$key],"Uploads_desc/".$value);
+                            $query = "INSERT INTO tbl_product_img_desc (product_id, product_img_desc) VALUES('$product_id','$value')";
+                            $result = $this ->db->insert($query);
+                            
+                        }
+                    }
+                    }
                 
             }
+            
         }
+
         // header('Location:brandlist.php');
         return $result;
     }

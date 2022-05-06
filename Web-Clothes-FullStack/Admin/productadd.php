@@ -49,6 +49,7 @@
                     <label for="">Mô tả sản phâm<span style="color: red;">*</span></label>
                     <textarea name="product_desc" id="editor" cols="30" rows="10"></textarea>
                     <label for="">Ảnh sản phâm<span style="color: red;">*</span></label>
+                    <span style="color: red;"><?php if(isset($insert_product)){echo $insert_product;} ?></span>
                     <input name="product_img" required type="file">
                     <label for="">Ảnh mô tả<span style="color: red;">*</span></label>
                     <input name="product_img_desc[]" required type="file" multiple>
